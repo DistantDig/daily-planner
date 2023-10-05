@@ -13,6 +13,7 @@ var events = [nineEvent, tenEvent, elevenEvent, twelveEvent, oneEvent, twoEvent,
 $('#date-display').text(today.format('MMMM D, YYYY'));
 
 renderEvents();
+renderColors();
 
 function renderEvents() {
     for (var i = 0; i < events.length; i++) {
@@ -27,4 +28,18 @@ function saveEvent(index) {
     var stringedObject = JSON.stringify(events[index].attr('name'));
     localStorage.setItem(stringedObject, events[index].val());
     events[index].attr('value', localStorage.getItem(stringedObject));
+}
+
+function renderColors() {
+    var hour = today.hour();
+    // var hour = 13
+    for (var i = 0; i < events.length; i++) {
+        if (9 + i < hour) {
+            events[i].addClass('text-primary-emphasis bg-dark-subtle border border-light-subtle');
+        } else if (9 + i > hour) {
+            events[i].addClass('text-primary-emphasis bg-success-subtle border border-success-subtle');
+        } else {
+            events[i].addClass('text-primary-emphasis bg-primary-subtle border border-primary-subtle');
+        }
+    }
 }
