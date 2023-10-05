@@ -6,4 +6,4 @@ I designed this project to help me learn jQuery, Bootstrap and Dayjs. This proje
 
 ![Screenshot of the project at 11AM with a handful of events filling some of the hours](./assets/images/daily_planner_screenshot.png)
 
-Link to the deployed project:
+Link to the deployed project: https://distantdig.github.io/daily-planner/
